@@ -1,4 +1,5 @@
 set number numberwidth=3
+set nosol
 execute pathogen#infect()
 set autoindent
 set smartindent
@@ -22,12 +23,16 @@ inoremap '; <Esc>:w<Cr>
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 :inoremap ( ()<Esc>i
-:inoremap { {};<Esc>hi
+:inoremap { {}<Esc>hi
 
 imap fn function(<Esc>A {
 inoremap af ()=> {};<Esc>hi<Cr><Esc>O
 
 imap ax (<Esc>la=>
 
-imap <leader>o <Esc>o<Esc>ki
-imap <leader>O <Esc>O<Esc>ji
+nnoremap <leader>o <Esc>o<Esc>k
+nnoremap <leader>O <Esc>O<Esc>j
+
+inoremap ' ''<Esc>i
+inoremap '] <Esc>k^f(a
+inoremap ]' <Esc>2jO
