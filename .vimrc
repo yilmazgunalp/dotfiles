@@ -36,3 +36,5 @@ nnoremap <leader>O <Esc>O<Esc>j
 inoremap ' ''<Esc>i
 inoremap '] <Esc>k^f(a
 inoremap ]' <Esc>2jO
+" toggle insert (paste) to paste cleanly from other sources
+set pastetoggle=<F3>
