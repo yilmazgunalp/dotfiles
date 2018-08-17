@@ -3,6 +3,7 @@ set nosol
 execute pathogen#infect()
 set autoindent
 set smartindent
+set splitright
 no <down> <Nop>
 no <left> <Nop>
 no <right> <Nop>
@@ -13,23 +14,13 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nmap ? :NERDTree<Cr>
 imap ii <esc>
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
 imap ,. <Esc>A
 inoremap '; <Esc>:w<Cr>
-set tabstop=2 softtabstop=0 expandtab shiftwidth=4 
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 
 
 :inoremap ( ()<Esc>i
 :inoremap { {}<Esc>i
 
-imap fn function(<Esc>A {
-inoremap af ()=> {};<Esc>hi<Cr><Esc>O
-
-imap ax (<Esc>la=>
-
-nnoremap <leader>o <Esc>o<Esc>k
 nnoremap <leader>O <Esc>O<Esc>j
 
 inoremap ' ''<Esc>i
@@ -37,6 +28,7 @@ inoremap '] <Esc>k^f(a
 inoremap ]' <Esc>2jO
 " toggle insert (paste) to paste cleanly from other sources
 set pastetoggle=<F3>
+
 " move between panes using hjkl
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -60,3 +52,11 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
+
+" Move lines up and down
+nnoremap <Esc>j :m .+1<CR>==
+nnoremap <Esc>k :m .-2<CR>==
+inoremap <Esc>j <Esc>:m .+1<CR>==gi
+inoremap <Esc>k <Esc>:m .-2<CR>==gi
+vnoremap <Esc>j :m '>+1<CR>gv=gv
+vnoremap <Esc>k :m '<-2<CR>gv=gv
