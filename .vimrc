@@ -10,6 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
 
 
 
@@ -21,7 +22,14 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " START .VIMRC
+echo ">^.^<"
+set relativenumber
+map - ddp
+map _ ddkP
+imap <c-u> <esc>viwUi
+nmap <c-u> viwU
 
+let g:ycm_autoclose_preview_window_after_completion=1
 set number numberwidth=3
 set nosol
 execute pathogen#infect()
@@ -77,10 +85,7 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
-" Move lines up and down
-nnoremap <Esc>j :m .+1<CR>==
-nnoremap <Esc>k :m .-2<CR>==
-inoremap <Esc>j <Esc>:m .+1<CR>==gi
-inoremap <Esc>k <Esc>:m .-2<CR>==gi
-vnoremap <Esc>j :m '>+1<CR>gv=gv
-vnoremap <Esc>k :m '<-2<CR>gv=gv
+" Commenting out Js lines
+nnoremap // <C-V> <S-i>//<Esc>
+
+
