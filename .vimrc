@@ -22,12 +22,21 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " START .VIMRC
-echo ">^.^<"
 set relativenumber
-map - ddp
-map _ ddkP
-imap <c-u> <esc>viwUi
-nmap <c-u> viwU
+noremap <leader>- ddp
+noremap <leader>_ ddkP
+inoremap <c-u> <esc>viwUi
+nnoremap <c-u> viwU
+nnoremap H 0
+nnoremap L $
+
+" Abbreviations
+iabbrev consloe console
+iabbrev cl console.log(
+
+" Surround in single quotes
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+vnoremap <leader>' <esc>`<<esc>i'<esc>`><esc>li'<esc>
 
 let g:ycm_autoclose_preview_window_after_completion=1
 set number numberwidth=3
@@ -36,16 +45,17 @@ execute pathogen#infect()
 set autoindent
 set smartindent
 set splitright
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
+no <down> <nop>
+no <left> <nop>
+no <right> <nop>
+no <up> <nop>
 
 let mapleader = ","
+let maplocalleader = "/"
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nmap ? :NERDTree<Cr>
-imap ii <esc>
+nnoremap ? :NERDTree<Cr>
+inoremap jk <esc>
 imap ,. <Esc>A
 inoremap '; <Esc>:w<Cr>
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 
@@ -86,6 +96,7 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 " Commenting out Js lines
-nnoremap // <C-V> <S-i>//<Esc>
+nnoremap // I//<Esc> 
+inoremap // <Esc>I//<Esc> 
 
 
