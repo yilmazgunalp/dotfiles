@@ -1,0 +1,5 @@
+alias dco='docker-compose up'
+alias chb='cd ~/ygprojects/cohab'
+alias wss='cd ~/ygprojects/wsserver'
+alias mss='cd ~/ygprojects/msgservice'
+alias v='vim .'

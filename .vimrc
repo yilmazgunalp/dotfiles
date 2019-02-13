@@ -21,6 +21,11 @@ Plugin 'SirVer/ultisnips'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" NERDTree settings
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+
 " START .VIMRC
 set relativenumber
 noremap <leader>- ddp
@@ -30,13 +35,19 @@ nnoremap <c-u> viwU
 nnoremap H 0
 nnoremap L $
 
+" Close tab easily
+nnoremap <leader>q :tabclose<Cr>
+
+" Close file easily
+nnoremap <leader>w :q<Cr>
+
 " Abbreviations
 iabbrev consloe console
 iabbrev cl console.log(
 
 " Surround in single quotes
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-vnoremap <leader>' <esc>`<<esc>i'<esc>`><esc>li'<esc>
+vnoremap <leader>' <esc>`<<esc>i'<esc>`><esc>a'<esc>
 
 let g:ycm_autoclose_preview_window_after_completion=1
 set number numberwidth=3
