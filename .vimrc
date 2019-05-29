@@ -28,6 +28,11 @@ let NERDTreeMinimalUI = 1
 
 " START .VIMRC
 set relativenumber
+" VIM SEARCH SETTINGS
+set hlsearch
+map <esc> :noh<cr>
+set ignorecase
+
 noremap <leader>- ddp
 noremap <leader>_ ddkP
 inoremap <c-u> <esc>viwUi
@@ -48,6 +53,13 @@ iabbrev cl console.log(
 " Surround in single quotes
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 vnoremap <leader>' <esc>`<<esc>i'<esc>`><esc>a'<esc>
+
+" Surround in double quotes
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+vnoremap <leader>" <esc>`<<esc>i"<esc>`><esc>a"<esc>
+
+" change inside double quotes
+nnoremap <leader>m ci"
 
 let g:ycm_autoclose_preview_window_after_completion=1
 set number numberwidth=3
