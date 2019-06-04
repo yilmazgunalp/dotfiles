@@ -27,6 +27,10 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 
 " START .VIMRC
+" SET LEADERS
+let mapleader = ","
+let maplocalleader = "/"
+
 set relativenumber
 " VIM SEARCH SETTINGS
 set hlsearch
@@ -73,8 +77,6 @@ no <left> <nop>
 no <right> <nop>
 no <up> <nop>
 
-let mapleader = ","
-let maplocalleader = "/"
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap ? :NERDTree<Cr>
@@ -111,11 +113,7 @@ cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
 " Tab navigation like Firefox.
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-Tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 " Commenting out Js lines
