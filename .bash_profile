@@ -17,3 +17,5 @@ pomo() {
   sleep 1500 
   paplay  /usr/share/sounds/ubuntu/stereo/message-new-instant.ogg
 }
+
+export PATH="$HOME/.cargo/bin:$PATH"
